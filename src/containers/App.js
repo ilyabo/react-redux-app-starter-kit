@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as Actions from '../actions'
-import Counter from '../components/Counter'
+import ButtonPane from '../components/ButtonPane'
+import BubbleChart from '../components/BubbleChart'
 
 
 
@@ -12,13 +13,16 @@ import './App.scss'
 export default class App extends Component {
 
   render() {
-    let { appState, addToCounter } = this.props;
+    let { appState } = this.props;
+    let { addPoints, removePoints, restart } = this.props;
     return (
       <div className="App">
-        <div>Hello, world!</div>
-        <Counter
-          counter={ appState.counter  }
-          addToCounter={ addToCounter }/>
+        <div>Hello, bubbles!</div>
+
+        <ButtonPane {...{ addPoints, removePoints, restart }} />
+
+        <BubbleChart width={ 400 } height={ 400 }
+                     points={ appState.points }/>
       </div>
     )
   }

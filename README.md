@@ -1,4 +1,4 @@
-# React + Redux minimal app starter kit
+# Minimal React + Redux + D3 app example
 
 ## Usage
 

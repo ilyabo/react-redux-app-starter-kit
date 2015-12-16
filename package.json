@@ -1,7 +1,7 @@
 {
   "name": "redux-react",
   "version": "1.0.0",
-  "description": "Minimal React+Redux application starter kit",
+  "description": "Minimal React+Redux+D3 app example",
   "main": "index.js",
   "babel": {
     "presets": [
@@ -26,6 +26,7 @@
     "webpack",
     "sass"
   ],
+  "author": "Ilya Boyandin",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ilyabo/react-redux-app-starter-kit/issues"
@@ -38,6 +39,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "css-loader": "^0.23.0",
+    "d3": "^3.5.11",
     "html-webpack-plugin": "^1.7.0",
     "isomorphic-fetch": "^2.2.0",
     "node-sass": "^3.4.2",
