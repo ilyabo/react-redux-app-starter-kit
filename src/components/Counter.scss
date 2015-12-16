@@ -1,0 +1,22 @@
+.Counter {
+
+}
+
+.Counter__label {
+  margin-top: 1em;
+  display: inline-block;
+}
+
+.Counter__value {
+  margin-left: .5em;
+  display: inline-block;
+}
+
+.Counter__buttons {
+  margin-top: .5em;
+}
+.Counter__button {
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+}

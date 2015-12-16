@@ -1,14 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import App from './containers/App'
+import configureStore from './store'
+
+const store = configureStore()
 
 
-function main() {
-  const app = document.createElement('div');
+let div = document.createElement('div')
+document.body.appendChild(div)
 
-  document.body.appendChild(app);
 
-  ReactDOM.render(<App />, app);
-}
+render(
+  <Provider store={ store }>
+    <App />
+  </Provider>,
+  div
+)
 
-main();
+

@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const path = require('path');
-const HtmlwebpackPlugin = require('html-webpack-plugin');
-const ROOT_PATH = path.resolve(__dirname);
+const webpack = require('webpack')
+const path = require('path')
+const HtmlwebpackPlugin = require('html-webpack-plugin')
+const ROOT_PATH = path.resolve(__dirname)
 
 module.exports = {
   devtool: process.env.NODE_ENV === 'production' ? '' : 'source-map',
@@ -25,7 +25,7 @@ module.exports = {
   output: {
     path: process.env.NODE_ENV === 'production' ? path.resolve(ROOT_PATH, 'dist') : path.resolve(ROOT_PATH, 'build'),
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
   devServer: {
     contentBase: path.resolve(ROOT_PATH, 'build'),
@@ -38,6 +38,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlwebpackPlugin({
       title: 'React+Redux starter'
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ]
-};
+}
