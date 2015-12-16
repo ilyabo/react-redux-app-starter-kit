@@ -4,12 +4,13 @@ import {
   RESTART
 } from '../actions'
 
+import { range } from 'd3'
 
 export default createReducer(
 
   {
     counter: 0,
-    points: []
+    points: range(50).map(() => range(3).map(Math.random))
   },
 
   {
