@@ -27,7 +27,7 @@ class ButtonPane extends Component {
       <div className="ButtonPane">
         <button className="ButtonPane__button" onClick={ this.handleMore }>More</button>
         <button className="ButtonPane__button" onClick={ this.handleLess }>Less</button>
-        <button className="ButtonPane__button" onClick={ this.handleRestart }>Restart</button>
+        <button className="ButtonPane__button" onClick={ this.handleRestart }>Clear</button>
       </div>
     )
   }
