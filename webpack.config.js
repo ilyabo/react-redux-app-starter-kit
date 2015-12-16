@@ -6,18 +6,11 @@ const ROOT_PATH = path.resolve(__dirname);
 module.exports = {
   devtool: process.env.NODE_ENV === 'production' ? '' : 'source-map',
   entry: [
-    path.resolve(ROOT_PATH,'app/src/index')
+    path.resolve(ROOT_PATH,'src/index')
   ],
   module: {
-    preLoaders: [
-      {
-        test: /\.jsx?$/,
-        loaders: process.env.NODE_ENV === 'production' ? [] : ['eslint'],
-        include: path.resolve(ROOT_PATH, './app')
-      }
-    ],
     loaders: [{
-      test: /\.jsx?$/,
+      test: /\.js$/,
       exclude: /node_modules/,
       loaders: ['react-hot', 'babel']
     },
@@ -27,15 +20,15 @@ module.exports = {
     }]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js']
   },
   output: {
-    path: process.env.NODE_ENV === 'production' ? path.resolve(ROOT_PATH, 'app/dist') : path.resolve(ROOT_PATH, 'app/build'),
+    path: process.env.NODE_ENV === 'production' ? path.resolve(ROOT_PATH, 'dist') : path.resolve(ROOT_PATH, 'build'),
     publicPath: '/',
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: path.resolve(ROOT_PATH, 'app/build'),
+    contentBase: path.resolve(ROOT_PATH, 'build'),
     historyApiFallback: true,
     hot: true,
     inline: true,
@@ -44,7 +37,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlwebpackPlugin({
-      title: 'React BoilerPlate'
+      title: 'React+Redux starter'
     })
   ]
 };

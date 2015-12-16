@@ -1,7 +1,7 @@
 import React from 'react';
 import Todo from './Todo';
 
-require('./App.scss');
+import './App.scss';
 
 export default class App extends React.Component {
   render() {
