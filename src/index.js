@@ -2,9 +2,10 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import App from './containers/App'
-import configureStore from './store'
+import configureStore from './store/store'
+import initialState from './store/initialState'
 
-const store = configureStore()
+const store = configureStore(initialState)
 
 
 let div = document.createElement('div')
